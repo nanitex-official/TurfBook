@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import BookingPage from './pages/BookingPage';
 import MyBookingsPage from './pages/MyBookingsPage';
@@ -27,17 +28,20 @@ function App() {
       
       {!loading && (
         <Router>
-          <div className="min-h-screen">
+          <div className="min-h-screen flex flex-col">
             <Navbar />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/book" element={<BookingPage />} />
-              <Route path="/my-bookings" element={<MyBookingsPage />} />
-              <Route path="/signin" element={<SignInPage />} />
-              <Route path="/signup" element={<SignUpPage />} />
-              <Route path="/admin/signin" element={<AdminSignInPage />} />
-              <Route path="/admin" element={<AdminPage />} />
-            </Routes>
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/book" element={<BookingPage />} />
+                <Route path="/my-bookings" element={<MyBookingsPage />} />
+                <Route path="/signin" element={<SignInPage />} />
+                <Route path="/signup" element={<SignUpPage />} />
+                <Route path="/admin/signin" element={<AdminSignInPage />} />
+                <Route path="/admin" element={<AdminPage />} />
+              </Routes>
+            </main>
+            <Footer />
           </div>
         </Router>
       )}
