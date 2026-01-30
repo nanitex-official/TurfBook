@@ -203,23 +203,52 @@ const HomePage = () => {
                 <div className="max-w-5xl mx-auto">
                     <h2 className="section-title">Pricing Plans</h2>
 
-                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden overflow-x-auto">
-                        <div className="grid grid-cols-3 bg-primary text-white font-bold text-sm md:text-lg min-w-[600px] md:min-w-0">
-                            <div className="p-4">Duration</div>
-                            <div className="p-4">Weekday Rate</div>
-                            <div className="p-4">Weekend Rate</div>
+                    {/* Desktop Table View */}
+                    <div className="hidden md:block bg-white rounded-2xl shadow-xl overflow-hidden">
+                        <div className="grid grid-cols-3 bg-primary text-white font-bold text-lg">
+                            <div className="p-4 md:p-6">Duration</div>
+                            <div className="p-4 md:p-6">Weekday Rate</div>
+                            <div className="p-4 md:p-6">Weekend Rate</div>
                         </div>
 
                         {pricingPlans.map((plan, index) => (
                             <div
                                 key={index}
-                                className={`grid grid-cols-3 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                                    }`}
+                                className={`grid grid-cols-3 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                             >
-                                <div className="p-4 font-semibold">{plan.duration}</div>
-                                <div className="p-4 text-primary font-bold">{plan.weekday}</div>
-                                <div className="p-4 text-primary font-bold">{plan.weekend}</div>
+                                <div className="p-4 md:p-6 font-semibold text-base md:text-lg">{plan.duration}</div>
+                                <div className="p-4 md:p-6 text-primary font-bold text-base md:text-lg">{plan.weekday}</div>
+                                <div className="p-4 md:p-6 text-primary font-bold text-base md:text-lg">{plan.weekend}</div>
                             </div>
+                        ))}
+                    </div>
+
+                    {/* Mobile Card View */}
+                    <div className="md:hidden space-y-3">
+                        {pricingPlans.map((plan, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200"
+                            >
+                                <div className="bg-primary text-white px-4 py-3 font-bold text-base">
+                                    {plan.duration}
+                                </div>
+                                <div className="p-4 space-y-2.5">
+                                    <div className="flex justify-between items-center py-1">
+                                        <span className="text-gray-600 text-sm font-medium">Weekday</span>
+                                        <span className="text-primary font-bold text-lg">{plan.weekday}</span>
+                                    </div>
+                                    <div className="h-px bg-gray-200"></div>
+                                    <div className="flex justify-between items-center py-1">
+                                        <span className="text-gray-600 text-sm font-medium">Weekend</span>
+                                        <span className="text-primary font-bold text-lg">{plan.weekend}</span>
+                                    </div>
+                                </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
