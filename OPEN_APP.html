@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurfHub - Quick Access</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00B140 0%, #009635 100%);
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #00B140;
+            margin-top: 0;
+            font-size: 36px;
+        }
+
+        .status {
+            background: #f0fdf4;
+            border-left: 4px solid #00B140;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .status-title {
+            font-weight: bold;
+            color: #00B140;
+            margin-bottom: 5px;
+        }
+
+        .link-box {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .link-box h3 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        a {
+            display: inline-block;
+            background: #00B140;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+
+        a:hover {
+            background: #009635;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 177, 64, 0.3);
+        }
+
+        .success {
+            color: #00B140;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏟️ TurfHub is Running!</h1>
+
+        <div class="status">
+            <div class="status-title">✅ System Status</div>
+            <div>Frontend Server: <span class="success">RUNNING</span></div>
+            <div>Backend Server: <span class="success">RUNNING</span></div>
+            <div>Database: <span class="success">CONNECTED</span></div>
+        </div>
+
+        <div class="link-box">
+            <h3>🌐 Open Application</h3>
+            <p>Click the button below to open TurfHub:</p>
+            <a href="http://localhost:5173" target="_blank">Open TurfHub Application</a>
+        </div>
+
+        <div class="link-box">
+            <h3>🔧 API Endpoints</h3>
+            <p>Test the backend API:</p>
+            <a href="http://localhost:5000/api/health" target="_blank">Health Check</a>
+            <a href="http://localhost:5000/api/seed" target="_blank">Seed Database</a>
+        </div>
+
+        <div class="link-box">
+            <h3>📝 Quick Start Guide</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Click "Seed Database" button above (one-time only)</li>
+                <li><strong>Step 2:</strong> Click "Open TurfHub Application"</li>
+                <li><strong>Step 3:</strong> Explore the home page</li>
+                <li><strong>Step 4:</strong> Click "Book Now" and make a test booking</li>
+                <li><strong>Step 5:</strong> Check "My Bookings" to see your booking</li>
+                <li><strong>Step 6:</strong> Visit "Admin" panel to manage everything</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <strong>TurfHub - Premium Turf Booking System</strong><br>
+            Full-stack application with React, Tailwind CSS, GSAP, and MongoDB<br>
+            Check README.md and other documentation files for more details.
+        </div>
+    </div>
+</body>
+
+</html>
